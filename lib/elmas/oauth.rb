@@ -25,6 +25,9 @@ module Elmas
           config.refresh_token = response.refresh_token
         end
       end
+    rescue BadRequestException
+      Elmas.error "Failed refresh authorization"
+      return false
     end
 
     def authorized?
@@ -135,9 +138,6 @@ module Elmas
         grant_type: "refresh_token",
         refresh_token: code
       }
-    rescue BadRequestException
-      Elmas.error "Failed refresh authorization"
-      return false
     end
   end
 end
