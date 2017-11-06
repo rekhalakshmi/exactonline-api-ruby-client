@@ -19,7 +19,7 @@ module Elmas
     end
 
     def refresh_authorization
-      OauthResponse.new(get_refresh_token(self.refresh_token)).tap do |response|
+      OauthResponse.new(Elmas.get_refresh_token(Elmas.refresh_token)).tap do |response|
         Elmas.configure do |config|
           config.access_token = response.access_token
           config.refresh_token = response.refresh_token
@@ -144,6 +144,10 @@ end
 
 module Elmas
   class OauthResponse < Response
+    def body
+      parsed.parsed_json
+    end
+
     def access_token
       body["access_token"]
     end
