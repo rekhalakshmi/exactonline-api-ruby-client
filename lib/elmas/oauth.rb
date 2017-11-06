@@ -144,20 +144,20 @@ end
 
 module Elmas
   class OauthResponse < Response
-    def body
+    def result
       parsed.parsed_json
     end
 
     def access_token
-      body["access_token"]
+      result["access_token"]
     end
 
     def division
-      body["division"]
+      result["division"]
     end
 
     def refresh_token
-      body["refresh_token"]
+      result["refresh_token"]
     end
   end
 end
