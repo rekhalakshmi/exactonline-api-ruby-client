@@ -18,7 +18,7 @@ module Elmas
     end
 
     def body
-      @response.body
+      @response.body.to_json
     end
 
     def parsed
