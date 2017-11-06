@@ -133,8 +133,11 @@ module Elmas
         client_id: client_id,
         client_secret: client_secret,
         grant_type: "refresh_token",
-        refresh_token: code,
+        refresh_token: code
       }
+    rescue BadRequestException
+      Elmas.error "Failed refresh authorization"
+      return false
     end
   end
 end
