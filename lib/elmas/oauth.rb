@@ -144,10 +144,6 @@ end
 
 module Elmas
   class OauthResponse < Response
-    def body
-      JSON.parse(@response.body)
-    end
-
     def access_token
       body["access_token"]
     end
