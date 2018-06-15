@@ -9,7 +9,7 @@ module Elmas
     end
 
     def other_attributes
-      super.concat([:date])
+      super.concat(%i[date])
     end
   end
 end
