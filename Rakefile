@@ -1,11 +1,13 @@
-require "bundler/gem_tasks"
+# frozen_string_literal: true
 
-task :rubocop do
-  sh "rubocop"
-end
+require "bundler/gem_tasks"
 
 task :rspec do
   sh "rspec"
 end
 
-task default: [:rubocop, :rspec]
+task :rubocop do
+  sh "rubocop"
+end
+
+task default: %i[rspec]

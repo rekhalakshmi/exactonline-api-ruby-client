@@ -1,3 +1,21 @@
+## 3.0.0
+- Deprecating auto authorize due to changes to login flow by Exact. https://support.exactonline.com/community/s/knowledge-base#All-All-HNO-Concept-general-security-gen-auth-totpc
+- Upgrade Ruby Version.
+
+## 2.6.0
+- Add main atttribute to bank account (thanks @Korstiaan)
+- Add address object (thanks @chicks)
+- Add user model (thanks @michielverkoijen)
+- Add couple missing attrbutes (thanks @michielverkoijen)
+
+## 2.5.0
+- Fix some stuff in the Oauth logic (thanks @michielverkoijen)
+- Add division class (thanks @michielverkoijen)
+- Remove mandatory attribute from SalesInvoice (thanks @michielverkoijen)
+- Add configurable logger (thanks @jdlombardozzi)
+- Add refresh token logic so you do not always have to reauthorize (thanks @jdlombardozzi)
+- Fix all rubocop issues (thanks @jdlombardozzi)
+
 ## 2.4.2
 - Add thread safety
 
