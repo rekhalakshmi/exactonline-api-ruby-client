@@ -57,6 +57,7 @@ module Elmas
         end
         request.headers = add_headers(options)
       end
+      Elmas.info("Elmas error response: #{response.inspect}") if ([200] + Elmas::Response::SUCCESS_CODES).exclude?(response.status.to_i)
       Response.new(response)
     end
   end
